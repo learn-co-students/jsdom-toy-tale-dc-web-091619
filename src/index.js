@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const toyForm = document.querySelector('.add-toy-form')
   toyForm.addEventListener('submit', createToy )
 })
-
+//get the toys onload
 fetch(`http://localhost:3000/toys`)
   .then(response => response.json())
   .then(json => getToys(json))
@@ -24,8 +24,10 @@ const getToys = json => {
   json.forEach(renderToy)
 }
 
+//to save likes as int
 let likesObj = {}
 
+//show toys
 const renderToy = toy => {
   const resultsDiv = document.querySelector("#toy-collection");
   let toyHolder = document.createElement("div")
@@ -39,6 +41,7 @@ const renderToy = toy => {
   likesObj[`${toy.id}`] = toy.likes
 }
 
+//create new toy
 const createToy = (e) => {
   e.preventDefault()
   let nameVal = e.target[0].value;
@@ -56,6 +59,7 @@ const createToy = (e) => {
   .then(renderToy)
 }
 
+//add like
 function addLike(e) {
   card = e.target.parentElement
   cardId = card.id.split("-")[2]
