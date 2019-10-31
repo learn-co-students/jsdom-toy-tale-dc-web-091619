@@ -100,6 +100,10 @@ function addOneToLikes(event) {
       likes: currentLikeCount + 1
     })
   })
-  .then(() => {likesTag.innerText = `${currentLikeCount + 1}likes`})
-  .catch((error) => alert("Something went wrong!"))
+  .then(function(response) {
+    return response.json()})
+  .then((data) => {
+    likesTag.innerText = `${data.likes} likes`
+  })
+  .catch(() => alert("Something went wrong!"))
 }
