@@ -16,13 +16,13 @@
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 3
+      "likes": 5
     },
     {
       "id": 4,
       "name": "Slinky Dog",
       "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
-      "likes": 4
+      "likes": 6
     },
     {
       "id": 5,
@@ -47,6 +47,42 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "dsdfws",
+      "image": "s",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "bear",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9145bzk1Z3L._SX425_.jpg",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "dsdd",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9145bzk1Z3L._SX425_.jpg",
+      "likes": 0,
+      "id": 11
+    },
+    {
+      "name": "joseph",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9145bzk1Z3L._SX425_.jpg",
+      "likes": 0,
+      "id": 12
+    },
+    {
+      "name": "liz",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9145bzk1Z3L._SX425_.jpg",
+      "likes": 0,
+      "id": 13
+    },
+    {
+      "name": "test",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9145bzk1Z3L._SX425_.jpg",
+      "likes": 6,
+      "id": 14
     }
   ]
 }
