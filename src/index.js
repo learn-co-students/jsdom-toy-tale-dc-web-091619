@@ -1,3 +1,4 @@
+// json-server --watch db.json
 let addToy = false
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -71,6 +72,9 @@ function addNewToySubmitted(event) {
     },
     body: JSON.stringify({
       name: document.querySelectorAll(".input-text")[0].value,
+      // or name: document.querySelectorAll(".input-text").name.value
+      // above possible because tag has a name="name"
+      // best practice is give tag an id or class and grab that way
       image: document.querySelectorAll(".input-text")[1].value,
       likes: 0
     })
@@ -81,6 +85,7 @@ function addNewToySubmitted(event) {
     addToyCard(data)
   })
   .catch(() => alert("Something went wrong!"))
+  document.querySelector(".add-toy-form").reset()
 }
 
 function addOneToLikes(event) {
