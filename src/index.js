@@ -36,9 +36,10 @@ const renderToy = toy => {
   toyHolder.innerHTML = `<h2>${toy.name}</h2>
   <img src="${toy.image}" class="toy-avatar" /> 
   <p>${toy.likes}</p>
-  <button class="like-btn" onclick="addLike(event)">Like <3</button>`
+  <button class="like-btn">Like <3</button>`
   resultsDiv.append(toyHolder)
   likesObj[`${toy.id}`] = toy.likes
+  toyHolder.querySelector("button").addEventListener("click",addLike)
 }
 
 //create new toy
