@@ -55,7 +55,6 @@ function updateLikes(updatedJson){
 
 function renderToy(toyObj){
   const toyCollection = document.getElementById("toy-collection")
-  
   const card = document.createElement("div")
   card.classList.add("card")
   card.id = toyObj.id
@@ -74,9 +73,15 @@ function renderToy(toyObj){
   toyButton.innerText="THIS DEFINITELY A BUTTON"
   toyButton.classList.add("like-btn")
   toyButton.addEventListener("click", addLike)
+
+  const delButton = document.createElement("button")
+  delButton.innerText= "DELETE ME"
+  delButton.addEventListener("click", delToy)
+
   
   toyCollection.appendChild(card)
   card.appendChild(header)
+  card.appendChild(delButton)
   card.appendChild(image)
   card.appendChild(likes)
   card.appendChild(toyButton)
@@ -104,4 +109,24 @@ function addNewToy(event){
     .then(response => response.json())
     .then(toy => renderToy(toy))
 
+
+  toyForm.reset();
+}
+
+function delToy(event){
+  let card = event.currentTarget.parentNode
+  let id = card.id
+
+  const configObj = {
+    method: "DELETE",
+    headers:{
+      "Content-Type":"application/json",
+      "Accept":"application/json"
+    },
+    
+  }
+
+  fetch(`http://localhost:3000/toys/${id}`, configObj)
+
+  document.getElementById(id).remove()//this removes it from the DOM. Even though it is already removed in the db. makes it so I wouldn't have to refetch
 }
