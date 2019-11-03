@@ -76,14 +76,11 @@ function submitHandler(){
   event.currentTarget.reset()
 }
 
-/* When a user clicks the like button, make a PATCH request to the server incrementing the current value of like
-Rerender the toy with the response.
-*/
 function increaseLike(){
   let currentToyId = parseInt(event.currentTarget.id.split("-")[1]);
   let currentLikes = parseInt( document.getElementById(`toy-${currentToyId}-likes`).innerText )
   newLikes = currentLikes + 1
-  debugger
+  
   fetch(`http://localhost:3000/toys/${currentToyId}`, {
     method: "PATCH",
     headers: {
@@ -93,8 +90,13 @@ function increaseLike(){
     body: JSON.stringify({likes: newLikes})
   })
     .then( response => response.json() )
-    .then( data => console.log(data) )
+    .then( data => updateToyLikes(data) )
 
+}
+
+function updateToyLikes(data){
+  let likesContainer = document.getElementById(`toy-${data.id}-likes`)
+  likesContainer.innerText = data.likes
 }
 
 //_______________DOM nodes_______________
