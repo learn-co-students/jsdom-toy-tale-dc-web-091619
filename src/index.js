@@ -91,7 +91,6 @@ function increaseLike(){
   })
     .then( response => response.json() )
     .then( data => updateToyLikes(data) )
-
 }
 
 function updateToyLikes(data){
@@ -107,9 +106,3 @@ function collectionContainer(){
 function getForm(){
   return document.querySelector('.add-toy-form')
 }
-
-
-
-
-
- 
